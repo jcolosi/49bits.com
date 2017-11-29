@@ -1,7 +1,7 @@
 // A password generator that creates passwords in the form <word><number><word><number><word>
 
 var words = new Array(
-"actor", "adult", "age", "agent", "air", "alarm", "anger", "angle", "apple", "army", "art", "aside", "award", "baby", "bad", "bag", "bake", "ball", "band", "bank", "bar", "base", "basis", "bat", "bath", "beach", "bear", "bed", "beer", "bell", "belt", "bench", "bend", "bet", "bid", "bike", "bill", "bird", "birth", "bit", "bite", "black", "blame", "blank", "blind", "block", "blood", "blow", "blue", "board", "boat", "body", "bone", "bonus", "book", "boot", "boss", "bowl", "box", "boy", "brain", "brave", "bread", "break", "brick", "brief", "broad", "brown", "brush", "buddy", "bug", "bunch", "burn", "bus", "buy", "buyer", "cable", "cake", "call", "calm", "camp", "candy", "cap", "car", "card", "care", "carry", "cash", "cat", "catch", "cause", "cell", "chain", "chair", "chart", "check", "chest", "child", "chip", "city", "claim", "class", "clerk", "click", "clock", "cloud", "club", "clue", "coach", "coast", "coat", "code", "cold", "cook", "copy", "cost", "count", "court", "cover", "cow", "crack", "craft", "crash", "crazy", "cream", "crew", "cross", "cry", "cup", "curve", "cut", "cycle", "dad", "dance", "dare", "dark", "data", "date", "day", "dead", "deal", "dear", "death", "debt", "deep", "delay", "depth", "desk", "devil", "diet", "dig", "dirt", "dish", "disk", "dog", "door", "dot", "doubt", "draft", "drag", "drama", "draw", "dream", "dress", "drink", "drive", "drop", "drunk", "dues", "dump", "dust", "duty", "ear", "earth", "east", "eat", "edge", "egg", "entry", "equal", "error", "essay", "event", "exam", "exit", "eye", "fail", "fall", "fan", "farm", "fat", "fault", "fear", "fee", "feed", "feel", "field", "fight", "file", "film", "final", "fire", "fish", "fix", "floor", "flow", "fly", "focus", "fold", "food", "foot", "force", "form", "frame", "front", "fruit", "fuel", "fun", "funny", "gain", "game", "gap", "gas", "gate", "gear", "gene", "gift", "girl", "glad", "glass", "glove", "goal", "gold", "golf", "grab", "grade", "grand", "grass", "green", "guard", "guide", "guy", "habit", "hair", "half", "hall", "hand", "hang", "harm", "hat", "hate", "head", "heart", "heat", "heavy", "hell", "hello", "help", "hide", "hire", "hit", "hold", "hole", "home", "honey", "hook", "hope", "horse", "host", "hotel", "hour", "house", "human", "hunt", "hurry", "hurt", "ice", "idea", "ideal", "image", "iron", "issue", "item", "job", "join", "joint", "joke", "judge", "juice", "jump", "jury", "key", "kick", "kid", "kill", "king", "kiss", "knee", "knife", "lab", "lack", "lady", "lake", "land", "laugh", "law", "lay", "layer", "lead", "leave", "leg", "level", "lie", "life", "lift", "light", "limit", "line", "link", "lip", "list", "load", "loan", "local", "lock", "log", "look", "loss", "love", "low", "luck", "lunch", "mail", "main", "major", "male", "mall", "map", "march", "mark", "match", "mate", "math", "meal", "meat", "media", "meet", "menu", "mess", "metal", "milk", "mind", "mine", "minor", "miss", "mix", "mode", "model", "mom", "money", "month", "mood", "motor", "mouse", "mouth", "move", "movie", "mud", "music", "nail", "name", "nasty", "neat", "neck", "nerve", "net", "news", "night", "noise", "north", "nose", "note", "novel", "nurse", "offer", "oil", "oven", "owner", "pace", "pack", "page", "pain", "paint", "pair", "panic", "paper", "park", "party", "pass", "past", "path", "pause", "pay", "peace", "peak", "pen", "phase", "phone", "photo", "piano", "pick", "pie", "piece", "pin", "pipe", "pitch", "pizza", "plan", "plane", "plant", "plate", "play", "poem", "poet", "pool", "pop", "post", "pot", "pound", "power", "press", "price", "pride", "print", "prior", "prize", "proof", "pull", "punch", "push", "queen", "quiet", "quit", "quote", "race", "radio", "rain", "raise", "range", "rate", "ratio", "raw", "reach", "read", "red", "rent", "reply", "rest", "rice", "rich", "ride", "ring", "rip", "rise", "risk", "river", "road", "rock", "role", "roll", "roof", "rope", "rough", "round", "row", "royal", "rub", "ruin", "rule", "run", "rush", "sad", "safe", "sail", "salad", "sale", "salt", "sand", "save", "scale", "scene", "score", "screw", "sea", "self", "serve", "set", "sex", "shake", "shame", "shape", "share", "shift", "shine", "ship", "shirt", "shock", "shoe", "shoot", "shop", "shot", "sick", "sign", "silly", "sink", "site", "size", "skill", "skin", "skirt", "sky", "sleep", "slice", "slide", "slip", "smell", "smile", "smoke", "snow", "sock", "soft", "soil", "solid", "song", "sort", "sound", "soup", "south", "space", "spare", "speed", "spell", "spend", "spite", "split", "sport", "spot", "spray", "staff", "stage", "stand", "star", "start", "stay", "steal", "step", "stick", "stock", "stop", "store", "storm", "story", "strip", "study", "stuff", "style", "suck", "sugar", "suit", "sun", "sweet", "swim", "swing", "table", "tale", "talk", "tank", "tap", "task", "taste", "tax", "tea", "teach", "team", "tear", "tell", "term", "test", "text", "theme", "tie", "till", "time", "tip", "title", "toe", "tone", "tool", "tooth", "top", "topic", "total", "touch", "tour", "towel", "tower", "town", "track", "trade", "train", "trash", "treat", "tree", "trick", "trip", "truck", "trust", "truth", "try", "tune", "twist", "type", "uncle", "unit", "upper", "user", "value", "vast", "video", "view", "virus", "visit", "voice", "wait", "wake", "walk", "wall", "war", "wash", "watch", "water", "wave", "wear", "web", "week", "west", "wheel", "white", "wife", "win", "wind", "wine", "wing", "wish", "woman", "wood", "word", "world", "worry", "worth", "wrap", "yard", "youth", "zone"
+"Actor","Adult","Age","Agent","Air","Alarm","Anger","Angle","Apple","Army","Art","Aside","Award","Baby","Bad","Bag","Bake","Ball","Band","Bank","Bar","Base","Basis","Bat","Bath","Beach","Bear","Bed","Beer","Bell","Belt","Bench","Bend","Bet","Bid","Bike","Bill","Bird","Birth","Bit","Bite","Black","Blame","Blank","Blind","Block","Blood","Blow","Blue","Board","Boat","Body","Bone","Bonus","Book","Boot","Boss","Bowl","Box","Boy","Brain","Brave","Bread","Break","Brick","Brief","Broad","Brown","Brush","Buddy","Bug","Bunch","Burn","Bus","Buy","Buyer","Cable","Cake","Call","Calm","Camp","Candy","Cap","Car","Card","Care","Carry","Cash","Cat","Catch","Cause","Cell","Chain","Chair","Chart","Check","Chest","Child","Chip","City","Claim","Class","Clerk","Click","Clock","Cloud","Club","Clue","Coach","Coast","Coat","Code","Cold","Cook","Copy","Cost","Count","Court","Cover","Cow","Crack","Craft","Crash","Crazy","Cream","Crew","Cross","Cry","Cup","Curve","Cut","Cycle","Dad","Dance","Dare","Dark","Data","Date","Day","Dead","Deal","Dear","Death","Debt","Deep","Delay","Depth","Desk","Devil","Diet","Dig","Dirt","Dish","Disk","Dog","Door","Dot","Doubt","Draft","Drag","Drama","Draw","Dream","Dress","Drink","Drive","Drop","Drunk","Dues","Dump","Dust","Duty","Ear","Earth","East","Eat","Edge","Egg","Entry","Equal","Error","Essay","Event","Exam","Exit","Eye","Fail","Fall","Fan","Farm","Fat","Fault","Fear","Fee","Feed","Feel","Field","Fight","File","Film","Final","Fire","Fish","Fix","Floor","Flow","Fly","Focus","Fold","Food","Foot","Force","Form","Frame","Front","Fruit","Fuel","Fun","Funny","Gain","Game","Gap","Gas","Gate","Gear","Gene","Gift","Girl","Glad","Glass","Glove","Goal","Gold","Golf","Grab","Grade","Grand","Grass","Green","Guard","Guide","Guy","Habit","Hair","Half","Hall","Hand","Hang","Harm","Hat","Hate","Head","Heart","Heat","Heavy","Hell","Hello","Help","Hide","Hire","Hit","Hold","Hole","Home","Honey","Hook","Hope","Horse","Host","Hotel","Hour","House","Human","Hunt","Hurry","Hurt","Ice","Idea","Ideal","Image","Iron","Issue","Item","Job","Join","Joint","Joke","Judge","Juice","Jump","Jury","Key","Kick","Kid","Kill","King","Kiss","Knee","Knife","Lab","Lack","Lady","Lake","Land","Laugh","Law","Lay","Layer","Lead","Leave","Leg","Level","Lie","Life","Lift","Light","Limit","Line","Link","Lip","List","Load","Loan","Local","Lock","Log","Look","Loss","Love","Low","Luck","Lunch","Mail","Main","Major","Male","Mall","Map","March","Mark","Match","Mate","Math","Meal","Meat","Media","Meet","Menu","Mess","Metal","Milk","Mind","Mine","Minor","Miss","Mix","Mode","Model","Mom","Money","Month","Mood","Motor","Mouse","Mouth","Move","Movie","Mud","Music","Nail","Name","Nasty","Neat","Neck","Nerve","Net","News","Night","Noise","North","Nose","Note","Novel","Nurse","Offer","Oil","Oven","Owner","Pace","Pack","Page","Pain","Paint","Pair","Panic","Paper","Park","Party","Pass","Past","Path","Pause","Pay","Peace","Peak","Pen","Phase","Phone","Photo","Piano","Pick","Pie","Piece","Pin","Pipe","Pitch","Pizza","Plan","Plane","Plant","Plate","Play","Poem","Poet","Pool","Pop","Post","Pot","Pound","Power","Press","Price","Pride","Print","Prior","Prize","Proof","Pull","Punch","Push","Queen","Quiet","Quit","Quote","Race","Radio","Rain","Raise","Range","Rate","Ratio","Raw","Reach","Read","Red","Rent","Reply","Rest","Rice","Rich","Ride","Ring","Rip","Rise","Risk","River","Road","Rock","Role","Roll","Roof","Rope","Rough","Round","Row","Royal","Rub","Ruin","Rule","Run","Rush","Sad","Safe","Sail","Salad","Sale","Salt","Sand","Save","Scale","Scene","Score","Screw","Sea","Self","Serve","Set","Sex","Shake","Shame","Shape","Share","Shift","Shine","Ship","Shirt","Shock","Shoe","Shoot","Shop","Shot","Sick","Sign","Silly","Sink","Site","Size","Skill","Skin","Skirt","Sky","Sleep","Slice","Slide","Slip","Smell","Smile","Smoke","Snow","Sock","Soft","Soil","Solid","Song","Sort","Sound","Soup","South","Space","Spare","Speed","Spell","Spend","Spite","Split","Sport","Spot","Spray","Staff","Stage","Stand","Star","Start","Stay","Steal","Step","Stick","Stock","Stop","Store","Storm","Story","Strip","Study","Stuff","Style","Suck","Sugar","Suit","Sun","Sweet","Swim","Swing","Table","Tale","Talk","Tank","Tap","Task","Taste","Tax","Tea","Teach","Team","Tear","Tell","Term","Test","Text","Theme","Tie","Till","Time","Tip","Title","Toe","Tone","Tool","Tooth","Top","Topic","Total","Touch","Tour","Towel","Tower","Town","Track","Trade","Train","Trash","Treat","Tree","Trick","Trip","Truck","Trust","Truth","Try","Tune","Twist","Type","Uncle","Unit","Upper","User","Value","Vast","Video","View","Virus","Visit","Voice","Wait","Wake","Walk","Wall","War","Wash","Watch","Water","Wave","Wear","Web","Week","West","Wheel","White","Wife","Win","Wind","Wine","Wing","Wish","Woman","Wood","Word","World","Worry","Worth","Wrap","Yard","Youth","Zone"
 );
 shuffle(words);
 var wordIndex = 0;
@@ -13,7 +13,7 @@ shuffle(nums);
 var numIndex = 0;
 
 var spec = new Array(
-" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"
+"!", "#", "$", "%", "*", "+", "-", ":", "=", "?", "@", "."
 );
 shuffle(spec);
 var specIndex = 0;
@@ -58,7 +58,7 @@ function nx() {
 // Animationend event is never thrown with iteration-count=infinite
 // Use animation-iteration with infinite
 
-$blocks = 14
+$blocks = 16
 $cycle = 20
 $rows = $blocks;
 
@@ -97,8 +97,8 @@ function getPwdBlock(row, col) {
   //pwdLeft.attr('title','Copied');
   pwdLeft.attr('data-content','Copied');
   pwdLeft.css('border-color', '#000000');
-  var newPwd = pwd();
-  //console.log(newPwd);
+  var newPwd = (which<($blocks/2)) ? pwdV5() : pwdV6();
+  //console.log(">>> ("+which+"): "+newPwd);
   pwdLeft.append(newPwd);
   pwdLeft.attr('data-clipboard-text',newPwd);
 
@@ -113,7 +113,7 @@ function getPwdBlock(row, col) {
   pwdRight.css('background-color', '#007E33');
   pwdRight.css('border-color', '#000000');
   var delay = (which / $blocks) * $cycle;
-  //console.log("delay ("+which+"): "+delay);
+  //console.log("delay ("+which+"): "+delay+": "+col);
   pwdRight.css('animation-delay',delay+'s');
   pwdRight.on('animationiteration', {"which": which}, pwdReset);
   pwdRight.append('&nbsp;');
@@ -127,7 +127,8 @@ function getPwdBlock(row, col) {
 }
 
 function pwdReset(event) {
-  var newPwd = pwd();
+  //console.log("reset: "+event.data.which);
+  var newPwd = (event.data.which<($blocks/2)) ? pwdV5() : pwdV6();
   var pwdHandle = $('#pwd'+event.data.which)
   pwdHandle.html(newPwd);
   pwdHandle.attr('data-clipboard-text',newPwd);
@@ -146,25 +147,28 @@ $(function () {
   });
 })
 
-// Best
-function pwd() {
-  return pwdV3();
-}
+// Word123Word456Word
 function pwdV1() {
   return w() + n() + w() + n() + w();
 }
  
+// Word123Word231Word
 function pwdV2() {
   var n = getNumbersV2();
   return w() + n[0] + w() + n[1] + w();
 }
  
-function pwdV3() {
-  var w1 = w().charAt(0).toUpperCase();
-  var w2 = w().charAt(0).toUpperCase();
-  return w1 + w2 + s() + n();
+// WordWord**123
+function pwdV5() {
+  return w() + w() + s() + s() + n();
 }
  
+// WordWordWord*123
+function pwdV6() {
+  return w() + w() + w() + s() + n();
+}
+ 
+// 483, 843... entropy?
 function getNumbersV2() {
   var dgt = new Array(0,1,2,3,4,5,6,7,8,9);
   shuffle(dgt);
