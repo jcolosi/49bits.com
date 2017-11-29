@@ -12,12 +12,6 @@ var nums = new Array(
 shuffle(nums);
 var numIndex = 0;
 
-var spec = new Array(
-" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"
-);
-shuffle(spec);
-var specIndex = 0;
-
 // Event timings
 $interval = 6
 //repeat(putTime,$interval);
@@ -32,13 +26,6 @@ function repeat(handle, seconds) {
 function w() {
   var out = words[wordIndex++];
   wordIndex %= words.length;
-  return out;
-}
-
-// Return a random word
-function s() {
-  var out = spec[specIndex++];
-  specIndex %= spec.length;
   return out;
 }
 
@@ -148,21 +135,12 @@ $(function () {
 
 // Best
 function pwd() {
-  return pwdV3();
-}
-function pwdV1() {
   return w() + n() + w() + n() + w();
 }
  
 function pwdV2() {
   var n = getNumbersV2();
   return w() + n[0] + w() + n[1] + w();
-}
- 
-function pwdV3() {
-  var w1 = w().charAt(0).toUpperCase();
-  var w2 = w().charAt(0).toUpperCase();
-  return w1 + w2 + s() + n();
 }
  
 function getNumbersV2() {
